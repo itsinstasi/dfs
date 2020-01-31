@@ -1,0 +1,461 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>DFS</title>
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+    <script async src="https://use.fontawesome.com/d758daec41.js"></script>   
+	<link rel="stylesheet" href="css/style.css"/>
+    
+    <meta name="description" content="mydfs interiors insta home decor cosy wares house interiortrend">
+    <meta name="keywords" content="mydfs interiors insta home decor cosy wares house interiortrend" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#fff">
+
+    <link rel="image_src" href="https://dfs.itsinsta.site/img/og/og.jpg" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dfs.itsinsta.site" />
+    <meta property="og:image" content="https://dfs.itsinsta.site/img/og/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="150"/>
+    <meta property="og:image:height" content="150"/>
+    <meta property="og:title" content="DFS" />
+    <meta property="og:description" content="mydfs interiors insta home decor cosy wares house interiortrend" />
+    <meta property="og:locale" content="Ru-ru" />
+    <meta property="og:site_name" content="dfs" />
+
+    <!--modernizr-->
+	<script src="js/vendors/modernizr-custom.js"></script>
+
+
+
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserhappy">
+            Ваш браузер <strong>устарел</strong>. Пожалуйста <a href="https://browsehappy.com/"  target="_blank">обновите</a>.
+        </p>
+    <![endif]-->
+    <noscript>
+		Вам нужно включить JavaScript в своем браузере, чтобы  отображение этой страницы было корректно.
+    </noscript>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrap">
+					<div class="header__left">
+						<a href="./" class="header__logo">
+							<div class="header__logo-pic"><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-19/10950274_1713165072243356_899695742_a.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_ohc=JJxUnvlcdZoAX_d1UZl&oh=c4ff20d722a8c9e4436ad62ea8b5e7b9&oe=5EC0517B" alt="DFS"></div>
+							<div class="header__logo-txt">dfs</div>
+						</a>
+						<div class="header__title">DFS</div>
+					</div>
+					<div id="settingsContainer" class="header__right" style="display:none">
+						<button onclick="window.open('http://itsinsta.site/page.html?project=dfs', '_self');" class="btn stories-popup__buy shake">Настроить</button>
+					</div>
+				</div>
+			</div>
+		</header>	
+		<div class="main"
+		style="background-image: -webkit-gradient(linear, 100% 0%, 0% 0%,color-stop(0, rgb(109, 139, 249)),color-stop(1, rgb(115, 105, 192))); background-image: -webkit-repeating-linear-gradient(right,rgb(109, 139, 249) 0%,rgb(115, 105, 192) 100%); background-image: repeating-linear-gradient(to left,rgb(109, 139, 249) 0%,rgb(115, 105, 192) 100%);background-image: -ms-repeating-linear-gradient(right,rgb(109, 139, 249) 0%,rgb(115, 105, 192) 100%);
+		color: #FFFFFF;--elems-color: #FFFFFF;
+"
+>
+
+		<div class="stories">
+			<div class="container">
+				<div class="stories__slider-wrap">
+					<div class="stories__slider" id="js-stories-slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="stories__slide" title="mydfs">
+									<a href="./tags/./mydfs.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/mydfs.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">mydfs</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="interiors">
+									<a href="./tags/./interiors.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/interiors.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">interiors</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="insta home">
+									<a href="./tags/./insta-home.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/insta-home.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">insta home</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="home decor">
+									<a href="./tags/./home-decor.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/home-decor.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">home decor</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="cosy">
+									<a href="./tags/./cosy.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/cosy.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">cosy</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="decor">
+									<a href="./tags/./decor.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/decor.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">decor</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="cosy home">
+									<a href="./tags/./cosy-home.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/cosy-home.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">cosy home</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="home wares">
+									<a href="./tags/./home-wares.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/home-wares.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">home wares</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="insta house">
+									<a href="./tags/./insta-house.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/insta-house.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">insta house</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="interiortrend">
+									<a href="./tags/./interiortrend.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/interiortrend.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">interiortrend</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="interiorforinspo">
+									<a href="./tags/./interiorforinspo.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/interiorforinspo.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">interiorforinspo</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="dfspet">
+									<a href="./tags/./dfspet.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/dfspet.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">dfspet</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="sosimple sofas">
+									<a href="./tags/./sosimple-sofas.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/sosimple-sofas.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">sosimple sofas</div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="stories__slide" title="velvet">
+									<a href="./tags/./velvet.html">
+										<div class="stories__slide-pic" style="background-image: url(./img/og/velvet.png);"></div>
+										<div class="stories__slide-txt" style="		color: #FFFFFF;
+">velvet</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="stories__arrow stories__arrow--prev" id="js-stories-prev"></div>
+					<div class="stories__arrow stories__arrow--next" id="js-stories-next"></div>
+				</div>
+			</div>
+		</div>
+
+			<div class="links-page">
+				<div class="container">
+					<h1 class="links-page-title">DFS</h1>
+
+					<div class="links-page-messagers count-0">
+					</div>
+
+					<div class="links-page-list">
+
+						<div style="
+background-color: Transparent;
+border: 1px solid #FFFFFF;
+" class="links-page-blc">
+							<div class="links-page-blc__title">Заказать обратный звонок</div>
+							<div class="links-page-blc__txt">Оставьте в этом поле свой телефон, и я перезвоню вам в ближайшее время.</div>
+							<form action="https://admapi.itsinsta.site/api/profiles/dfs/messages" method="post" class="links-page-blc__form">
+								<input type="tel" name="contact" class="links-page-blc__input" required placeholder="Введите телефон" style="
+background-color: Transparent;
+border: 1px solid #FFFFFF;
+--brd-color: #FFFFFF;
+color: #FFFFFF;
+"/>
+								<button style="
+background-color: Transparent;
+border: 1px solid #FFFFFF;
+color: #FFFFFF;
+" class="btn links-page-blc__btn">Отправить запрос</button>
+							</form>
+							<div id="leadSent" class="links-page-blc__txt"></div>
+						</div>
+					</div>
+				</div>
+			</div>	
+
+
+			<article class="article">
+				<div class="container">
+					<section class="article-more">
+						<div class="container">
+							<h2 class="links-page-title">ПОПУЛЯРНЫЕ</h2>
+							<div class="article-more__list">
+								<a href="./posts/./it-might-be-fight-night.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>724</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/81324696_105751274218520_705391336805609727_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=x2vbV-CArJEAX8dIARD&oh=d1ac3d6b8769562aca6d832ca5fffe69&oe=5EC0E6AC" alt="It might be fight night">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">It might be fight night</div>
+								</a>
+								<a href="./posts/./new-yearx-old-sofa.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>428</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82400960_535425633848008_9199707939132673341_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=66yRP4cOEWQAX9WvWY_&oh=22d28edfe2ca56fe52438480eeeec11d&oe=5ECAB7A9" alt="New year, old sofa?">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">New year, old sofa?</div>
+								</a>
+								<a href="./posts/./can-t-beat-a-bit-of-blush-velvet.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>399</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/83559271_200140534462622_8032200872050729941_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=O2UYFDuC_tAAX9u_wwe&oh=3f18f598f3a8ccdda78c507891f946ab&oe=5EBA672C" alt="Can't beat a bit of blush velvet">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Can't beat a bit of blush velvet</div>
+								</a>
+								<a href="./posts/./florals-make-the-heart-grow-fonder.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>369</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/82855690_182058393180560_8630465777115934623_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=1B1s2sFqZcIAX-zHGXw&oh=5fd0fa500ba61542bc6b71232add11f8&oe=5ED22649" alt="Florals make the heart grow fonder">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Florals make the heart grow fonder</div>
+								</a>
+								<a href="./posts/./powder-pink-x-polished-concrete.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>278</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82161328_267760067521280_4957220145523109580_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=zvWMnAhZnVAAX8Veg6X&oh=884779187f9602b202b7326d09afea5d&oe=5ED31C10" alt="Powder pink + polished concrete">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Powder pink + polished concrete</div>
+								</a>
+								<a href="./posts/./seaside-views-on-a-sunday.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>201</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82059964_120154975950693_5960606443295083624_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=3ZZwOEURMCMAX8Upie_&oh=b73b0a70ac51837ecf0f15f2ba92baef&oe=5ED6F7B3" alt="Seaside views on a Sunday">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Seaside views on a Sunday</div>
+								</a>
+								<a href="./posts/./feeling-blue.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>198</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/e15/82695417_827201974360587_6184672112603288281_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=103&_nc_ohc=fpTUDBNNGrAAX8DW_DP&oh=17ecea357909714041e6e5aafc608b39&oe=5EB4ECB9" alt="Feeling blue?">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Feeling blue?</div>
+								</a>
+								<a href="./posts/./create-an-air-of-oriental-zen-with-warm-lighting.html" class="article-more__item">
+									<div class="article-more__item-pic">
+										<div class="article-more__item-pic-blind">
+											<span><i class="fa fa-comment-o" aria-hidden="true"></i>0</span> <span><i class="fa fa-heart" aria-hidden="true"></i>193</span>
+										</div>
+										<img class="js-now-lazy" src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/83895250_121474325789409_2134128013767025768_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=XriQCTcBoH0AX9nLJHm&oh=c82bcc29103b314b9f768ec5f134287d&oe=5EC6917E" alt="Create an air of oriental zen with warm lighting,">
+									</div>
+									<div class="article-more__item-name" style="
+		color: #FFFFFF;
+">Create an air of oriental zen with warm lighting,</div>
+								</a>
+							</div>
+						</div>
+					</section>		
+				</div>			
+			</article>			
+
+			<div class="links-page">
+				<div class="container">
+					<div class="links-page-soc">
+					</div>
+
+					<div class="links-page-footer">
+						<a href="https://lichnyj-brend.ru?ref=dfs" target="_blank">Личный Бренд</a><br/>
+						@dfs рекомендует <br/>&nbsp;
+					</div>
+				</div>
+			</div>	
+		</div>			
+	</div>
+	<!--swiper-->
+	<script src="js/vendors/swiper.min.js"></script>
+	<!--jQuery-->
+	<script src="js/vendors/jquery.min.js"></script>
+	<!--init-->
+	<script src="js/jquery.init.js"></script>
+	<!--my scripts-->
+	<script src="js/jquery.main.js"></script>
+
+    <script type="text/javascript">
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+}
+
+$(document).ready(function(){
+	var lid = getUrlParameter("lid");
+	if (lid && lid != "true") {
+        localStorage.setItem("hasToken", true);
+
+		$("#settingsContainer").show();
+		$("#settingsContainer").children("btn").first().attr("onclick", 'window.open("http://itsinsta.site/invite.html?invitationId="' + lid + ')');
+	}
+	else if (lid && lid == "true") {
+        localStorage.setItem("hasToken", true);
+		$("#settingsContainer").show();
+	}
+	else if (localStorage.getItem("hasToken"))
+	{
+		$("#settingsContainer").show();
+	}
+
+    $('form').submit(function(){
+	event.preventDefault(); //prevent default action 
+
+	var contact = $(this).find('input[name="contact"]').val();
+	if (!contact) return false;
+
+	var post_url = $(this).attr("action"); //get form action url
+	var request_method = $(this).attr("method"); //get form GET/POST method
+	var form_data = JSON.stringify(getFormData($(this)));
+
+	var form = $(this);
+	$.ajax({
+		url : post_url,
+		type: request_method,
+                contentType: 'application/json',
+		data : form_data
+	}).done(function(response){
+	    var email = response.email;
+		if (email) {
+	        $("#leadSent").text("Ваш запрос отправлен на " + email);
+		} else {
+	        $("#leadSent").text("Ваш запрос отправлен");
+		}
+
+		var input = form.find('input');
+		input.attr('readonly', true);
+        input.attr("disabled", true);
+		form.find('button').attr("disabled", true);
+	}).fail(function(){
+	});
+
+        return false;
+    });
+});
+    </script>
+
+</body>
+</html>

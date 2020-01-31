@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <title>Stories. DFS</title>
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script async src="https://use.fontawesome.com/d758daec41.js"></script>   
+	<link rel="stylesheet" href="css/style.css"/>
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#fff">
+    
+    <link rel="image_src" href="https://dfs.itsinsta.site/img/og/og.jpg" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dfs.itsinsta.site" />
+    <meta property="og:image" content="https://dfs.itsinsta.site/img/og/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="150"/>
+    <meta property="og:image:height" content="150"/>
+    <meta property="og:title" content="DFS" />
+    <meta property="og:description" content="Tag #mydfs for a chance to have your sofa featured on our grid 🛋" />
+    <meta property="og:locale" content="Ru-ru" />
+    <meta property="og:site_name" content="dfs" />
+
+    <!--modernizr-->
+	<script src="js/vendors/modernizr-custom.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserhappy">
+            Ваш браузер <strong>устарел</strong>. Пожалуйста <a href="https://browsehappy.com/"  target="_blank">обновите</a>.
+        </p>
+    <![endif]-->
+    <noscript>
+		Вам нужно включить JavaScript в своем браузере, чтобы  отображение этой страницы было корректно.
+    </noscript>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrap">
+					<div class="header__left">
+						<div class="header__logo">
+							<div class="header__logo-pic"><img src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-19/10950274_1713165072243356_899695742_a.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_ohc=JJxUnvlcdZoAX_d1UZl&oh=c4ff20d722a8c9e4436ad62ea8b5e7b9&oe=5EC0517B" alt="DFS" /></div>
+							<div class="header__logo-txt">dfs</div>
+						</div>
+						<div class="header__title">DFS</div>
+					</div>
+				</div>
+			</div>
+		</header>	
+		<div class="main-sec">
+			<div class="container">
+				<div class="main-sec__wrap">
+					<div class="main-sec__txt">
+						<p>&nbsp;</p>
+						<div class="search">
+							<input type="search" class="input search__input" placeholder="Story">
+							<button id="btn_save" class="btn search__btn" type="submit" title="Сохранить"><i class="fa fa-save" aria-hidden="true"></i></button>
+							<p>&nbsp;</p>
+							<button id="btn_delete" class="btn search__btn" type="submit" title="Удалить"><i class="fa fa-remove" aria-hidden="true"></i></button>
+							<p>&nbsp;
+								<div id="choosen">0</div> / <div id="total">0</div>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="stories">
+			<div class="container">
+				<div class="stories__slider-wrap">
+					<div class="stories__slider" id="js-stories-slider">
+						<div class="swiper-wrapper">
+						</div>
+					</div>
+					<div class="stories__arrow stories__arrow--prev" id="js-stories-prev"></div>
+					<div class="stories__arrow stories__arrow--next" id="js-stories-next"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="items" id="js-items">
+			<div class="container">
+				<div class="items-main" id="js-items-main">
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="sometimes-it-s-just-the-simpler-the-style" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/81973959_469131237308239_3029370156884009432_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=xncUzpPR14gAX_5KX-R&oh=5f440e6ed7d75058cff2cfbec978b34f&oe=5EDB08B2" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Sometimes it's just the simpler the style,">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="florals-make-the-heart-grow-fonder" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/82855690_182058393180560_8630465777115934623_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=1B1s2sFqZcIAX-zHGXw&oh=5fd0fa500ba61542bc6b71232add11f8&oe=5ED22649" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Florals make the heart grow fonder">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="seaside-views-on-a-sunday" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82059964_120154975950693_5960606443295083624_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=3ZZwOEURMCMAX8Upie_&oh=b73b0a70ac51837ecf0f15f2ba92baef&oe=5ED6F7B3" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Seaside views on a Sunday">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="create-an-air-of-oriental-zen-with-warm-lighting" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/83895250_121474325789409_2134128013767025768_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=109&_nc_ohc=XriQCTcBoH0AX9nLJHm&oh=c82bcc29103b314b9f768ec5f134287d&oe=5EC6917E" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Create an air of oriental zen with warm lighting,">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="can-t-beat-a-bit-of-blush-velvet" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/83559271_200140534462622_8032200872050729941_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=102&_nc_ohc=O2UYFDuC_tAAX9u_wwe&oh=3f18f598f3a8ccdda78c507891f946ab&oe=5EBA672C" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Can't beat a bit of blush velvet">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="there-s-always-room-for-a-dulux" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/e15/81358417_2211631635606881_3632100943737630522_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=105&_nc_ohc=lz7F5uES_IYAX_MbWQI&oh=48f25ef5748bc9b0dce5d8980ca39cd2&oe=5EBC36A4" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="There's always room for a Dulux">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="no-space-for-a-sofax-no-problem" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/e15/80743264_2691471850900212_9135228043208097264_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=100&_nc_ohc=_L2_QX0D8rIAX-JjhfG&oh=df8e774b2591eda88a9736587f8f57d2&oe=5EBB8D50" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="No space for a sofa, no problem!">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="feeling-blue" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/e15/82695417_827201974360587_6184672112603288281_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=103&_nc_ohc=fpTUDBNNGrAAX8DW_DP&oh=17ecea357909714041e6e5aafc608b39&oe=5EB4ECB9" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Feeling blue?">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="it-might-be-fight-night" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/p1080x1080/81324696_105751274218520_705391336805609727_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=x2vbV-CArJEAX8dIARD&oh=d1ac3d6b8769562aca6d832ca5fffe69&oe=5EC0E6AC" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="It might be fight night">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="new-yearx-old-sofa" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82400960_535425633848008_9199707939132673341_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=66yRP4cOEWQAX9WvWY_&oh=22d28edfe2ca56fe52438480eeeec11d&oe=5ECAB7A9" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="New year, old sofa?">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="powder-pink-x-polished-concrete" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/82161328_267760067521280_4957220145523109580_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_cat=108&_nc_ohc=zvWMnAhZnVAAX8Veg6X&oh=884779187f9602b202b7326d09afea5d&oe=5ED31C10" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="Powder pink + polished concrete">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+					<div class="items-item">
+						<label class="items-item__wrap items-item__check">
+							<input id="we-ve-teamed-up-with-xduluxuk" type="checkbox" />
+							<div class="items-item__pic">
+								<img class="" src="img/placeholder.png" data-src="https://scontent-arn2-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/81318850_511262986181167_5977836834597802391_n.jpg?_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=h2b3Pj8MNB8AX_52QDR&oh=ec088ea672f69833702fe4860c76964e&oe=5ED2DBAA" onerror="this.onerror=null; this.src='img/placeholder.png'" alt="We've teamed up with @duluxuk">
+								<ul class="items-item__taglist">
+								</ul>
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!--swiper-->
+	<script src="js/vendors/swiper.min.js"></script>
+	<!--jQuery-->
+	<script src="js/vendors/jquery.min.js"></script>
+	<!--lazyloadxt-->
+	<script src="js/vendors/jquery.lazyloadxt.js"></script>
+	<!--init-->
+	<script src="js/jquery.init.js"></script>
+	<!--my scripts-->
+	<script src="js/jquery.main.js"></script>
+
+	<script type="text/javascript">
+var currentTitle = '';
+var tags = {
+};
+
+function cleanupItems() {
+	$(".items-item").each(function() {
+		$(this).find("input").prop("checked", false);
+	});
+}
+
+function refreshStories() {
+	$(".stories__slide").each(function() {
+		var checkbox = $(this).find("input");
+
+		if ($(this).prop("title") != currentTitle) {
+			checkbox.prop("checked", false);
+		} else if (!$(this).is(':checked')) {
+			checkbox.prop("checked", true);
+		}
+	});
+
+	resizeSwiper();
+}
+
+function refreshChoosen() {
+	if (currentTitle == ''  || tags[currentTitle] == null) {
+		$("#choosen").text(0);
+	} else {
+		$("#choosen").text(tags[currentTitle].length);
+	}
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
+var storyClick = function () {
+	var title = $(this).closest(".stories__slide").prop("title");
+	if ($(this).is(':checked')) {
+		currentTitle = title;
+
+		refreshStories();
+
+		// Set all choosen blocks.
+		if (tags[currentTitle] != null) {
+			$(".items-item").each(function() {
+				var checkbox = $(this).find("input");
+				checkbox.prop("checked", $.inArray(checkbox.prop("id"), tags[currentTitle]) !== -1);
+			});
+		} else {
+			cleanupItems();
+		}
+	} else {
+		currentTitle = '';
+
+		cleanupItems();
+	}
+	$(".search__input").val(currentTitle);
+	refreshChoosen();
+}
+
+function setStoryBackground(title) {
+	$(".stories__slide").each(function() {
+		if ($(this).prop("title") == title) {
+			var divPic = $(this).find('.stories__slide-pic');
+
+			var img = getStoryBackground(title);
+			divPic.css("background-image", "url(" + img + ")");
+		}
+	});
+}
+
+function getStoryBackground(title) {
+	if (title == null) {
+		return null;
+	}
+
+	var tag = tags[title][0];
+
+	var item = $(".items-item").filter(function() {
+		return $(this).find("input").prop("id") == tag;
+	}).first();
+
+	var url = item.find("img").attr('data-src');
+	if (typeof url !== typeof undefined && url !== false) {
+		return url;
+	}
+	return item.find("img").prop('src');
+}
+
+function addStory(title) {
+	$(".swiper-wrapper").prepend(`
+							<div class="swiper-slide">
+								<div class="stories__slide" title="` + title + `">
+									<label class="stories__slide__check">
+										<input type="checkbox" />
+										<div class="stories__slide-pic" style=""></div>
+										<div class="stories__slide-txt">` + title + `</div>
+									</label>
+								</div>
+							</div>
+`);
+	var added = $(".swiper-slide").first();
+	added.width(added.height());
+	added.find("input").click(storyClick);
+}
+
+function loadStories() {
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories",
+		type: "GET",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); },
+		success: function (data) { 
+			tags = {};
+			$(".stories__slide").remove();
+
+			$.each(data, function(index, element) {
+				tags[element.title] = element.posts;
+
+				addStory(element.title);
+
+				setStoryBackground(element.title);
+			});
+
+			setTimeout(function(){
+				resizeSwiper();
+			}, 1000);
+		}
+	});
+}
+
+function linkStoryPost(story, post) {
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories/" + story + "/link/" + post,
+		type: "POST",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); }
+	});
+}
+
+function unlinkStoryPost(story, post) {
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories/" + story + "/unlink/" + post,
+		type: "POST",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); }
+	});
+}
+
+function createStory(story) {
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories/" + story,
+		type: "POST",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); }
+	});
+}
+
+function renameStory(story, newStory) {
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories/" + story + "/rename/" + newStory,
+		type: "POST",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); }
+	});
+}
+
+function resizeSwiper(){
+	swiper.update();
+}
+
+function deleteStory(storyTitle) {
+	tags[storyTitle] = [];
+
+	var story = $(".stories__slide").filter(function() {
+		return $(this).prop("title") == storyTitle;
+	}).first().parent();
+			
+	story.remove();
+
+	cleanupItems();
+
+	resizeSwiper();
+
+	if (key == null) {
+		return;
+	}
+
+	$.ajax({
+		url: "https://admapi.itsinsta.site/api/stories/" + storyTitle,
+		type: "DELETE",
+		dataType: 'json',
+		beforeSend: function(xhr) { xhr.setRequestHeader('key', key); }
+	});
+}
+
+$(document).ready(function() {
+	key = getUrlParameter("key");
+
+	loadStories();
+
+	$("#total").text($(".items-item").length);
+
+    $(".stories__slide").each(function() {
+		$(this).find("input").click(storyClick);
+	});
+
+    $(".items-item").each(function() {
+		$(this).find("input").click(function() {
+			if (currentTitle != '') {
+				var id = $(this).prop("id");
+
+				if ($(this).is(':checked')) {
+					if (tags[currentTitle] == null) {
+						tags[currentTitle] = [ id ];
+					} else {
+						tags[currentTitle] = $.merge(tags[currentTitle], [ id ]);
+					}
+
+					linkStoryPost(currentTitle, id);
+				} else {
+					tags[currentTitle] = $(tags[currentTitle]).not([ id ]).get();
+
+					unlinkStoryPost(currentTitle, id);
+				}
+
+				if (tags[currentTitle].length == 1) {
+					setStoryBackground(currentTitle);
+				}
+
+				$("#choosen").text(tags[currentTitle].length);
+			} else {
+				$(this).prop("checked", false);
+			}
+		});
+	});
+
+	$("#btn_save").click(function(){
+		var newTitle = $(".search__input").val();
+
+		if (currentTitle != '' && newTitle != '') {
+			tags[newTitle] = tags[currentTitle];
+
+			var story = $(".stories__slide").filter(function(){
+				return $(this).prop("title") == currentTitle;
+			}).first();
+			story.prop("title", newTitle);
+
+			story.find(".stories__slide-txt").text(newTitle);
+
+			renameStory(currentTitle, newTitle);
+
+			currentTitle = newTitle;
+		} else if (currentTitle != '' && newTitle == '') {
+			deleteStory(currentTitle);
+
+			currentTitle = '';
+			cleanupItems();
+		} else if (currentTitle == '' && newTitle != '') {
+			var stories = $(".stories__slide").filter(function() {
+				return $(this).prop("title") == newTitle;
+			});
+
+			if (stories.length == 0) {
+				currentTitle = newTitle;
+
+				addStory(newTitle);
+
+				refreshStories();
+
+				createStory(currentTitle);
+			}
+		}
+
+		$(".items-item").each(function() {
+			var checkbox = $(this).find("input");
+			checkbox.prop("checked", false);
+		});
+		cleanupItems();
+	});
+
+	$("#btn_delete").click(function(){
+		if (currentTitle == '') {
+			return;
+		}
+
+		deleteStory(currentTitle);
+
+		currentTitle = '';
+		cleanupItems();
+
+		$(".search__input").val('');
+	});
+});
+	</script>
+</body>
+</html>
